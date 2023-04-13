@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <style>
+      .image-container img {
+  width: 50%;
+  height: 75%;
+  object-fit: cover;
+  align-items: center;
+  }
+    </style>
+    <base target="_top">
+    <script>
+
+      function updateButton1(button) {
+        console.log("Step One Started")
+      }
+      google.script.run.withSuccessHandler(updateButton1)
+        
+
+      function updateButton2(button) {
+        console.log("Step Two Started")
+      }
+      google.script.run.withSuccessHandler(updateButton2)
+        
+
+      function updateButton3(button) {
+        console.log("Step Three Started")
+      }
+      google.script.run.withSuccessHandler(updateButton3)
+        
+      
+      </script>
+    </head>
+      <body>
+
+        <div class="image-container">
+        <img src="https://via.placeholder.com/600x400 alt="BrandingLogo">
+        </div>
+
+        <h1>How to use this app </h1>
+        <p>This application is a three step process. The first step inspects your data with a few prompts and will make sure the neccessary items are included. If everything is correct you will get a confirmation message. You will then either select a document to use as a template or be provided with one. This is primarilly to give you an example on how to use the tags that will refer to the data in your spreadsheet. Finally, the last step will create your documents and give you the option to email the recipients in the email column. </p>
+        <p>This app creates a folder in your google drive called "Mail Merge Drafts" and at the time of creating the template documents creates a subfolder to store all the templates. Everything can be accessed in this folder at a later date if needed.</p>
+        <p>You will notice a "Confirmation" sheet added to your file. This contains links to each individual file and a Yes/No indicating wether an email was sent.</p>
+        <p>If you have any issues or suggestions please use the link below to let us know how we can improve. </p>
+        <a href="#" target="_blank">Mail Merge Feedback</a>
+
+        <h2> Step One - Check Your Sheet</h2>
+        <p> Click the button below to check your spreadsheet's headers. </p>
+        <input type="button" value="Step One"
+          onclick="google.script.run
+            .withSuccessHandler(updateButton1)
+            .stepOne()" />
+
+        <h2> Step Two </h2>
+        <p> Click the button below to select and edit your template document. Please be aware popups will need to be allowed for the file to be opened automatically. If popups are blocked you will need to enable them on this page and re-run step two. </p>
+        <input type="button" value="Step Two"
+          onclick="google.script.run
+            .withSuccessHandler(updateButton2)
+            .stepTwo()" />
+
+        <h2> Step Three </h2>
+        <p> Click the button below to create documents and send emails. </p>
+        <input type="button" value="Step Three"
+          onclick="google.script.run
+            .withSuccessHandler(updateButton3)
+            .stepThree()" />
+        
+        
+      </body>
+</html>
